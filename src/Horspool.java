@@ -25,6 +25,13 @@ public class Horspool {
         return false;
     }
 
+    /**
+     *Calling method for this Horspool's search implementation (This version returns FIRST match)
+     * Uses Horspool's algorithm to search for string in given text
+     * @param subStr String to search for
+     * @param str Input text to run the search on
+     * @return The first match
+     */
     public static int search(String subStr, String str) {
         int[] T = preprocess(subStr);
         int skip = 0;
@@ -39,6 +46,13 @@ public class Horspool {
         return -1;
     }
 
+    /**
+     * Calling method for this Horspool's search implementation (This version returns ALL matches)
+     * Uses Horspool's algorithm to search for string in given text
+     * @param subStr String to search for
+     * @param str Input text to run the search on
+     * @return A List of all matching string's indexes
+     */
     public static ArrayList<Integer> searchAll(String subStr, String str) {
         int[] T = preprocess(subStr);
         ArrayList<Integer> matches = new ArrayList<>();
