@@ -37,7 +37,7 @@ public class Horspool {
         int skip = 0;
 
         while (str.length() - skip >= subStr.length()) {
-            if (compareToLength(str.substring(skip, str.length()-1), subStr, subStr.length()))
+            if (compareToLength(str.substring(skip), subStr, subStr.length()))
                 return skip;
             skip += T[str.charAt(skip + subStr.length() - 1)];
         }
