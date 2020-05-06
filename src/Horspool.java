@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class horspool {
+public class Horspool {
 
     public static int[] preprocess(String pattern) {
         int[] T = new int[256];
