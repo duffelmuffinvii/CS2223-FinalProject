@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Horspool {
 
     public static int[] preprocess(String pattern) {
-        int[] T = new int[256];
-        for (int i = 0; i < 256; i++) {
+        int[] T = new int[8213];
+        for (int i = 0; i < 8213; i++) {
             T[i] = pattern.length();
         }
         for (int i = 0; i < pattern.length() - 1; i++) {
