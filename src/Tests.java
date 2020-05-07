@@ -96,7 +96,6 @@ class Tests {
 
     //todo end of file test (word that is at end of file, but has extra stuff after where file end)
 
-    //todo string that does not occur in text, but maybe has something similar but with a non-alphanumeric char Bi-Coloured-Python-Rock-Snake
     @Test
     void doesNotOccurInTextButIsSimilarToSomethingThatDoes() { //added em dash at end instead of en dash,
         assertEquals(-1,BruteForce.bruteStringSearch(ElephantsChildTXT,"Bi-Coloured-Python-Rock—Snake"));
