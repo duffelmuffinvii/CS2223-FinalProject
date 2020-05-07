@@ -16,6 +16,8 @@ public class Horspool {
 
     public static boolean compareToLength(String str1, String str2, int len) {
         int i = len-1;
+        if (str1.length() < len || str2.length() < len)
+            return false;
         while (str1.charAt(i) == str2.charAt(i)) {
             if (i == 0) {
                 return true;
