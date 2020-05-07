@@ -99,9 +99,18 @@ class Tests {
     @Test
     void doesNotOccurInTextButIsSimilarToSomethingThatDoes() { //added em dash at end instead of en dash,
         assertEquals(-1,BruteForce.bruteStringSearch(ElephantsChildTXT,"Bi-Coloured-Python-Rock—Snake"));
-        assertEquals(-1,Horspool.search("Bi-Coloured-Python-Rock—Snake",ElephantsChildTXT)); //fixme both the Horspool one's error out!
-        ArrayList<Integer> testArray = new ArrayList<>(); //fixme java.lang.ArrayIndexOutOfBoundsException: Index 8212 out of bounds for length 256
+        assertEquals(-1,Horspool.search("Bi-Coloured-Python-Rock—Snake",ElephantsChildTXT));
+        ArrayList<Integer> testArray = new ArrayList<>();
         assertEquals(testArray,Horspool.searchAll("Bi-Coloured-Python-Rock—Snake", ElephantsChildTXT));
+        //todo liam's method
+    }
+
+    @Test
+    void doesNotOccurInTextButIsSimilarToSomethingThatDoesREDUX() { //threw an umlaut o (ö) in the mix,
+        assertEquals(-1,BruteForce.bruteStringSearch(ElephantsChildTXT,"End of this Pröject"));
+        assertEquals(-1,Horspool.search("End of this—Pröject",ElephantsChildTXT));
+        ArrayList<Integer> testArray = new ArrayList<>();
+        assertEquals(testArray,Horspool.searchAll("End of this—Pröject", ElephantsChildTXT));
         //todo liam's method
     }
 }
