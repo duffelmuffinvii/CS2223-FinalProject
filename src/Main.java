@@ -24,7 +24,7 @@ public class Main {
         }
         System.out.println("\nWhat string would you like to search for? Enter it now...");
         String toSearchOption = keyboard.next();
-        System.out.println("\nWhat method would you like to run?\nOptions are 1. Brute Force' 2. Horspool's Algorithm, or 3. Horspool's Algorithm Implementation (find multiple matches Version)? Enter corresponding number..."); //todo liam's algo
+        System.out.println("\nWhat method would you like to run?\nOptions are 1. Brute Force' 2. Horspool's Algorithm, 3. Horspool's Algorithm Implementation (find multiple matches Version), or 4. Boyer Moore Algorithm Implementation? Enter corresponding number...");
         int result = -2;
         switch (keyboard.nextInt()) {
             case 1:
@@ -44,6 +44,12 @@ public class Main {
                 if (resultSearchAll.isEmpty()) {
                     System.out.println("\n"+toSearchOption+" does not appear in the text.");
                 } else System.out.println("\n"+toSearchOption+" is seen in the text at the following indexes: "+resultSearchAll);
+                break;
+            case 4:
+                result = BoyerMoore.search(file,toSearchOption,Math.max(BoyerMoore.alphasize(toSearchOption),BoyerMoore.alphasize(file)));
+                if (result == -1) {
+                    System.out.println("\n"+toSearchOption+" does not appear in the text.");
+                } else System.out.println("\n"+toSearchOption + " is first seen in the text at index "+result);
                 break;
         }
     }
