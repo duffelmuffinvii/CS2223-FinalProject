@@ -18,7 +18,7 @@ public class Main {
      */
     public static String fileHandlerToString(String filename, Charset charset) throws FileNotFoundException {
         String content = "";
-        File FILE = new File("ElephantsChild.txt");
+        File FILE = new File(filename);
         if (!FILE.exists()) throw new FileNotFoundException("File \""+FILE+"\" was not found");
         Scanner scanner = new Scanner(FILE, String.valueOf(charset));
         while (scanner.hasNextLine()) {
