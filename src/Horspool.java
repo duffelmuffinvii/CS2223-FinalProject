@@ -2,9 +2,20 @@ import java.util.ArrayList;
 
 public class Horspool {
 
-    public static int[] preprocess(String pattern) {
-        int[] T = new int[8213];
-        for (int i = 0; i < 8213; i++) {
+    public static int getAlphaSize(String str) {
+        int highest = 0;
+        for (char c : str.toCharArray()) {
+            if (c > highest) {
+                highest = c;
+            }
+        }
+
+        return highest;
+    }
+
+    public static int[] preprocess(String pattern, String fullStr) {
+        int[] T = new int[getAlphaSize(fullStr)+1];
+        for (int i = 0; i < T.length; i++) {
             T[i] = pattern.length();
         }
         for (int i = 0; i < pattern.length() - 1; i++) {
@@ -35,7 +46,7 @@ public class Horspool {
      * @return The first match
      */
     public static int search(String subStr, String str) {
-        int[] T = preprocess(subStr);
+        int[] T = preprocess(subStr, str);
         int skip = 0;
 
         while (str.length() - skip >= subStr.length()) {
@@ -56,7 +67,7 @@ public class Horspool {
      * @return A List of all matching string's indexes
      */
     public static ArrayList<Integer> searchAll(String subStr, String str) {
-        int[] T = preprocess(subStr);
+        int[] T = preprocess(subStr, str);
         ArrayList<Integer> matches = new ArrayList<>();
 
         int skip = 0;
