@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         System.out.println("CS 2223 - Final Project D-Term 2020\nGROUP MEMBERS: Cole Manning, Mason Powell, Liam McDonald, Sam Kwok, Sam Rowe\n------------");
-        String STRING_ElephantsChild = fileHandlerToString("ElephantsChild.txt",StandardCharsets.ISO_8859_1);
-        System.out.println(STRING_ElephantsChild);
     }
 
     public static String fileHandlerToString(String filename, Charset charset) throws FileNotFoundException {
