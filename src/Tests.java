@@ -108,9 +108,18 @@ class Tests {
     @Test
     void doesNotOccurInTextButIsSimilarToSomethingThatDoesREDUX() { //threw an umlaut o (ö) in the mix,
         assertEquals(-1,BruteForce.bruteStringSearch(ElephantsChildTXT,"End of this Pröject"));
-        assertEquals(-1,Horspool.search("End of this—Pröject",ElephantsChildTXT));
+        assertEquals(-1,Horspool.search("End of this Pröject",ElephantsChildTXT));
         ArrayList<Integer> testArray = new ArrayList<>();
-        assertEquals(testArray,Horspool.searchAll("End of this—Pröject", ElephantsChildTXT));
+        assertEquals(testArray,Horspool.searchAll("End of this Pröject", ElephantsChildTXT));
+        //todo liam's method
+    }
+
+    @Test
+    void doesNotOccurInTextButIsSimilarToSomethingThatDoesREDUXCounterClockwiseCountourIntegral() { //threw in what i think is the last character in the Unicode Alphabet
+        assertEquals(-1,BruteForce.bruteStringSearch(ElephantsChildTXT,"\uDBFF")); // Which is the "Plane 16 Private Use, Last"
+        assertEquals(-1,Horspool.search("\uDBFF",ElephantsChildTXT));
+        ArrayList<Integer> testArray = new ArrayList<>();
+        assertEquals(testArray,Horspool.searchAll("\uDBFF", ElephantsChildTXT));
         //todo liam's method
     }
 }
