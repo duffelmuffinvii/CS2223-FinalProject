@@ -21,7 +21,8 @@ class Tests {
     void baselineTest() {
         assertEquals(6,BruteForce.bruteStringSearch("Lorem ipsum dolor sit amet","ipsum"));
         assertEquals(6,Horspool.search("ipsum","Lorem ipsum dolor sit amet"));
-        //todo Horspool.searchAll
+        ArrayList<Integer> testArray = new ArrayList<>(); testArray.add(6);
+        assertEquals(testArray,Horspool.searchAll("ipsum", "Lorem ipsum dolor sit amet"));
         //todo liam's method
     }
 
